@@ -24,6 +24,9 @@ function App() {
   };
 
   const handleEqualClick = () => {
+    if (state.currentNumber === '') {
+      return;
+    }
     dispatch(calculateTotal());
   };
 
