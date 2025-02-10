@@ -35,18 +35,24 @@ const reducer = (state, action) => {
     case APPLY_NUMBER:
       return {
         ...state,
-        currentNumber: state.currentNumber + action.payload,
+        currentNumber:
+          state.currentNumber === '0'
+            ? action.payload.toString()
+            : state.currentNumber + action.payload,
       };
 
     case CALCULATE_TOTAL:
       return {
         ...state,
-        total: calculateResult(
-          state.total,
-          Number(state.currentNumber),
-          state.operation
-        ),
-        currentNumber: '',
+        total:
+          state.currentNumber === ''
+            ? state.total
+            : calculateResult(
+              state.total,
+              Number(state.currentNumber),
+              state.operation
+            ),
+        currentNumber: state.currentNumber === '' ? state.currentNumber : '',
       };
 
     case CHANGE_OPERATION:
@@ -54,10 +60,10 @@ const reducer = (state, action) => {
         ...state,
         total: state.currentNumber
           ? calculateResult(
-              state.total,
-              Number(state.currentNumber),
-              state.operation
-            )
+            state.total,
+            Number(state.currentNumber),
+            state.operation
+          )
           : state.total,
         operation: action.payload,
         currentNumber: '0',
@@ -87,10 +93,10 @@ const reducer = (state, action) => {
         ...state,
         memory: state.currentNumber
           ? calculateResult(
-              state.total,
-              Number(state.currentNumber),
-              state.operation
-            )
+            state.total,
+            Number(state.currentNumber),
+            state.operation
+          )
           : state.total,
       };
 
