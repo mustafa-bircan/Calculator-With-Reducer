@@ -11,7 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background: #574b90;
+  background: hsl(0, 0%, 100%);
 }
 
 code {
@@ -48,17 +48,17 @@ button {
   text-align: center;
   padding: 15px !important;
   outline: none;
-  background-color: #546de5 !important;
-  border-color: #6c5ce7 !important;
+  background-color: #d7975a !important;
+  border-color: #ffffff !important;
   color: #fff !important;
 }
 
 button:hover {
-  background-color: #8e9fec !important;
+  background-color: #2786ba !important;
 }
 
 button:active {
-  background-color: #8393dd !important;
+  background-color: #dee268 !important;
 }
 
 .eq_button .col-xs-4 {
@@ -90,7 +90,7 @@ button:active {
 .details {
   display: flex;
   justify-content: space-between;
-  background-color: black;
+  background-color: rgb(117, 181, 83);
   color: white;
   font-size: 12px;
   font-weight: bold;
